@@ -1,0 +1,17 @@
+Dependencias a intalar:
+
+-Esto instala la dependencia package.json:
+npm init --y
+
+-Instalar los paquetes necesarios generales:
+npm i express express-handlebars morgan mysql2
+
+-Intalamos una dependencia de desarrollo:
+npm i nodemon -D
+
+-Despues instalar la dependencia de desarrollo entrar al archivo package.json ubicar "scripts":cambiar el test por "dev": "nodemon backend/index.js"
+
+-Ya para ejecutar utilizamos el codigo:
+npm run dev
+
+

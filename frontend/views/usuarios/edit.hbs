@@ -1,0 +1,65 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white text-center">
+                    <h3 class="text-uppercase mb-0">Editando Usuario</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{persona.id}}" method="post">
+                        
+                        <div class="input-group mt-2">
+                            <label for="name" class="input-group-text">Nombre</label>
+                            <input class="form-control" type="text" name="name" id="name" 
+                                value="{{persona.name}}" placeholder="Ejemplo: Luis Angel" autofocus required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="lastname" class="input-group-text">Apellido</label>
+                            <input class="form-control" type="text" name="lastname" id="lastname" 
+                                value="{{persona.lastname}}" placeholder="Ejemplo: Fernandez" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="user" class="input-group-text">Usuario</label>
+                            <input class="form-control" type="text" name="user" id="user" 
+                                value="{{persona.user}}" placeholder="Ejemplo: luisangel123" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="correo" class="input-group-text">Correo</label>
+                            <input class="form-control" type="email" name="correo" id="correo" 
+                                value="{{persona.correo}}" placeholder="correo@ejemplo.com" required>
+                        </div>
+
+                        <div class="input-group mt-3">
+                            <label class="input-group-text" for="categoria"><i class="fa-solid fa-layer-group me-2"></i>Categoría</label>
+                            <select class="form-select" name="categoria" id="categoria" required>
+                                <option value="Administrador" {{#if (eq persona.categoria 'Administrador')}}selected{{/if}}>Administrador</option>
+                                <option value="Soporte" {{#if (eq persona.categoria 'Soporte')}}selected{{/if}}>Soporte</option>
+                                <option value="Cliente" {{#if (eq persona.categoria 'Cliente')}}selected{{/if}}>Cliente</option>
+                                <option value="Invitado" {{#if (eq persona.categoria 'Invitado')}}selected{{/if}}>Invitado</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group mt-3">
+                            <label class="input-group-text" for="estado"><i class="fa-solid fa-circle-check me-2"></i>Estado</label>
+                            <select class="form-select" name="estado" id="estado" required>
+                                <option value="Activo" {{#if (eq persona.estado 'Activo')}}selected{{/if}}>Activo</option>
+                                <option value="Inactivo" {{#if (eq persona.estado 'Inactivo')}}selected{{/if}}>Inactivo</option>
+                                <option value="Pendiente" {{#if (eq persona.estado 'Pendiente')}}selected{{/if}}>Pendiente</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">
+                                <i class="fa-solid fa-floppy-disk me-2"></i>Actualizar Registro
+                            </button>
+                            <a href="/list" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

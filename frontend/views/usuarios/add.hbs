@@ -1,0 +1,56 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">CREAR NUEVO USUARIO</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="input-group mt-2">
+                            <label for="name" class="input-group-text">Nombre</label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Ejemplo: Luis Angel" autofocus required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="lastname" class="input-group-text">Apellido</label>
+                            <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Ejemplo: Fernandez" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="user" class="input-group-text">Usuario</label>
+                            <input class="form-control" type="text" name="user" id="user" placeholder="Ejemplo: luisangel123" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="correo" class="input-group-text">Correo</label>
+                            <input class="form-control" type="email" name="correo" id="correo" placeholder="correo@ejemplo.com" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label class="input-group-text" for="categoria">Categoría</label>
+                            <select class="form-select" name="categoria" required>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Soporte">Soporte</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Invitado">Invitado</option> </select>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label class="input-group-text" for="estado">Estado</label>
+                                <select class="form-select" name="estado" required>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Inactivo">Inactivo</option>
+                                    <option value="Pendiente">Pendiente</option>
+                                </select>
+                        </div>
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Crear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

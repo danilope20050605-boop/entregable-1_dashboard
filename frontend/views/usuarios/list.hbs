@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2">Lista de usuarios</h3>
+
+        {{#if personas}}
+            <div class="row mb-3 justify-content-end">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" id="inputBusqueda" class="form-control" placeholder="Buscar usuario...">
+                    </div>
+                </div>
+            </div>
+
+            <table class="table text-center" id="tablaPersonas">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Categoría</th> <th scope="col">Estado</th>    <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each personas}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{lastname}}</td>
+                            <td>{{user}}</td>
+                            <td>
+                                <span class="badge bg-secondary">{{categoria}}</span>
+                            </td>
+                            <td>
+                                <span class="badge 
+                                    {{#if (eq estado 'Activo')}}bg-success
+                                    {{else if (eq estado 'Inactivo')}}bg-danger
+                                    {{else}}bg-warning{{/if}}">
+                                    {{estado}}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/edit/{{id}}" class="btn btn-warning p-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <a href="/delete/{{id}}" class="btn btn-danger p-2">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                <tfoot>
+                    <tr class="table-dark">
+                        <td colspan="7">REGISTRO DE USUARIOS</td> </tr>
+                </tfoot>
+            </table>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-body">
+                    <p>No hay usuarios registrados.</p>
+                    <a href="/add" class="btn btn-primary">Registrar uno</a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>
